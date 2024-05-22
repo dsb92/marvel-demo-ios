@@ -35,6 +35,8 @@
 		46B7DBBC2BFEA87100DEDAB9 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBBB2BFEA87100DEDAB9 /* Load.swift */; };
 		46B7DBBE2BFEA8C000DEDAB9 /* MD5Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBBD2BFEA8C000DEDAB9 /* MD5Hasher.swift */; };
 		46B7DBC02BFEA95600DEDAB9 /* MD5HasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBBF2BFEA95600DEDAB9 /* MD5HasherTests.swift */; };
+		46B7DBC22BFEAAE200DEDAB9 /* EnvironmentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBC12BFEAAE200DEDAB9 /* EnvironmentReader.swift */; };
+		46B7DBC42BFEABEA00DEDAB9 /* EnvironmentReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBC32BFEABEA00DEDAB9 /* EnvironmentReaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		46B7DBBB2BFEA87100DEDAB9 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		46B7DBBD2BFEA8C000DEDAB9 /* MD5Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Hasher.swift; sourceTree = "<group>"; };
 		46B7DBBF2BFEA95600DEDAB9 /* MD5HasherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5HasherTests.swift; sourceTree = "<group>"; };
+		46B7DBC12BFEAAE200DEDAB9 /* EnvironmentReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentReader.swift; sourceTree = "<group>"; };
+		46B7DBC32BFEABEA00DEDAB9 /* EnvironmentReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentReaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 			children = (
 				46B7DB9D2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift */,
 				46B7DBBF2BFEA95600DEDAB9 /* MD5HasherTests.swift */,
+				46B7DBC32BFEABEA00DEDAB9 /* EnvironmentReaderTests.swift */,
 			);
 			path = MarvelDemoAppTests;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			children = (
 				46B7DBBB2BFEA87100DEDAB9 /* Load.swift */,
 				46B7DBBD2BFEA8C000DEDAB9 /* MD5Hasher.swift */,
+				46B7DBC12BFEAAE200DEDAB9 /* EnvironmentReader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				46B7DB912BFDCFE800DEDAB9 /* EventSummary.swift in Sources */,
 				46B7DB8D2BFDCFC800DEDAB9 /* EventList.swift in Sources */,
 				46B7DBA62BFE96B000DEDAB9 /* MockURLSession.swift in Sources */,
+				46B7DBC22BFEAAE200DEDAB9 /* EnvironmentReader.swift in Sources */,
 				46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkService.swift in Sources */,
 				46B7DBBC2BFEA87100DEDAB9 /* Load.swift in Sources */,
 				46B7DB892BFDCFAF00DEDAB9 /* StoryList.swift in Sources */,
@@ -392,6 +399,7 @@
 			files = (
 				46B7DB9E2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift in Sources */,
 				46B7DBC02BFEA95600DEDAB9 /* MD5HasherTests.swift in Sources */,
+				46B7DBC42BFEABEA00DEDAB9 /* EnvironmentReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
