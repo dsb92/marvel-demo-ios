@@ -11,7 +11,6 @@
 		46B7DB502BFDC41800DEDAB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB4F2BFDC41800DEDAB9 /* ContentView.swift */; };
 		46B7DB522BFDC41800DEDAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B7DB512BFDC41800DEDAB9 /* Assets.xcassets */; };
 		46B7DB552BFDC41800DEDAB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B7DB542BFDC41800DEDAB9 /* Preview Assets.xcassets */; };
-		46B7DB5F2BFDC41900DEDAB9 /* MarvelDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB5E2BFDC41900DEDAB9 /* MarvelDemoAppTests.swift */; };
 		46B7DB692BFDC41900DEDAB9 /* MarvelDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB682BFDC41900DEDAB9 /* MarvelDemoAppUITests.swift */; };
 		46B7DB6B2BFDC41900DEDAB9 /* MarvelDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB6A2BFDC41900DEDAB9 /* MarvelDemoAppUITestsLaunchTests.swift */; };
 		46B7DB7F2BFDCE1800DEDAB9 /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB7E2BFDCE1800DEDAB9 /* CharacterDataWrapper.swift */; };
@@ -26,6 +25,13 @@
 		46B7DB912BFDCFE800DEDAB9 /* EventSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB902BFDCFE800DEDAB9 /* EventSummary.swift */; };
 		46B7DB932BFDCFF600DEDAB9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB922BFDCFF600DEDAB9 /* Image.swift */; };
 		46B7DB952BFDD00200DEDAB9 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB942BFDD00200DEDAB9 /* Url.swift */; };
+		46B7DB992BFE855700DEDAB9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB982BFE855700DEDAB9 /* NetworkService.swift */; };
+		46B7DB9E2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB9D2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift */; };
+		46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DB9F2BFE965C00DEDAB9 /* Request.swift */; };
+		46B7DBA22BFE967900DEDAB9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBA12BFE967900DEDAB9 /* Response.swift */; };
+		46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBA32BFE969800DEDAB9 /* URLRequestNetworkService.swift */; };
+		46B7DBA62BFE96B000DEDAB9 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBA52BFE96B000DEDAB9 /* MockURLSession.swift */; };
+		46B7DBA82BFE96D300DEDAB9 /* MockURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DBA72BFE96D300DEDAB9 /* MockURLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,6 @@
 		46B7DB512BFDC41800DEDAB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46B7DB542BFDC41800DEDAB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46B7DB5A2BFDC41900DEDAB9 /* MarvelDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46B7DB5E2BFDC41900DEDAB9 /* MarvelDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDemoAppTests.swift; sourceTree = "<group>"; };
 		46B7DB642BFDC41900DEDAB9 /* MarvelDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B7DB682BFDC41900DEDAB9 /* MarvelDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDemoAppUITests.swift; sourceTree = "<group>"; };
 		46B7DB6A2BFDC41900DEDAB9 /* MarvelDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -68,6 +73,13 @@
 		46B7DB902BFDCFE800DEDAB9 /* EventSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummary.swift; sourceTree = "<group>"; };
 		46B7DB922BFDCFF600DEDAB9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		46B7DB942BFDD00200DEDAB9 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		46B7DB982BFE855700DEDAB9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		46B7DB9D2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestNetworkServiceTests.swift; sourceTree = "<group>"; };
+		46B7DB9F2BFE965C00DEDAB9 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		46B7DBA12BFE967900DEDAB9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		46B7DBA32BFE969800DEDAB9 /* URLRequestNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestNetworkService.swift; sourceTree = "<group>"; };
+		46B7DBA52BFE96B000DEDAB9 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		46B7DBA72BFE96D300DEDAB9 /* MockURLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,7 @@
 		46B7DB4C2BFDC41800DEDAB9 /* MarvelDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				46B7DB972BFDD66F00DEDAB9 /* Network */,
 				46B7DB7D2BFDCE0A00DEDAB9 /* Models */,
 				46B7DB4D2BFDC41800DEDAB9 /* MarvelDemoAppApp.swift */,
 				46B7DB4F2BFDC41800DEDAB9 /* ContentView.swift */,
@@ -138,7 +151,7 @@
 		46B7DB5D2BFDC41900DEDAB9 /* MarvelDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				46B7DB5E2BFDC41900DEDAB9 /* MarvelDemoAppTests.swift */,
+				46B7DB9D2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift */,
 			);
 			path = MarvelDemoAppTests;
 			sourceTree = "<group>";
@@ -177,6 +190,27 @@
 				46B7DB942BFDD00200DEDAB9 /* Url.swift */,
 			);
 			path = Characters;
+			sourceTree = "<group>";
+		};
+		46B7DB972BFDD66F00DEDAB9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				46B7DB9F2BFE965C00DEDAB9 /* Request.swift */,
+				46B7DBA12BFE967900DEDAB9 /* Response.swift */,
+				46B7DB982BFE855700DEDAB9 /* NetworkService.swift */,
+				46B7DBA92BFE981600DEDAB9 /* URLRequest */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		46B7DBA92BFE981600DEDAB9 /* URLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				46B7DBA32BFE969800DEDAB9 /* URLRequestNetworkService.swift */,
+				46B7DBA52BFE96B000DEDAB9 /* MockURLSession.swift */,
+				46B7DBA72BFE96D300DEDAB9 /* MockURLRequestBuilder.swift */,
+			);
+			path = URLRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +284,7 @@
 					};
 					46B7DB592BFDC41900DEDAB9 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = 46B7DB492BFDC41800DEDAB9;
 					};
 					46B7DB632BFDC41900DEDAB9 = {
@@ -310,7 +345,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B7DB7F2BFDCE1800DEDAB9 /* CharacterDataWrapper.swift in Sources */,
+				46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */,
 				46B7DB812BFDCE5E00DEDAB9 /* CharacterDataContainer.swift in Sources */,
+				46B7DBA82BFE96D300DEDAB9 /* MockURLRequestBuilder.swift in Sources */,
+				46B7DBA22BFE967900DEDAB9 /* Response.swift in Sources */,
 				46B7DB872BFDCF9D00DEDAB9 /* ComicSummary.swift in Sources */,
 				46B7DB8B2BFDCFBB00DEDAB9 /* SeriesList.swift in Sources */,
 				46B7DB832BFDCEB500DEDAB9 /* Character.swift in Sources */,
@@ -320,8 +358,11 @@
 				46B7DB4E2BFDC41800DEDAB9 /* MarvelDemoAppApp.swift in Sources */,
 				46B7DB952BFDD00200DEDAB9 /* Url.swift in Sources */,
 				46B7DB8F2BFDCFD900DEDAB9 /* StorySummary.swift in Sources */,
+				46B7DB992BFE855700DEDAB9 /* NetworkService.swift in Sources */,
 				46B7DB912BFDCFE800DEDAB9 /* EventSummary.swift in Sources */,
 				46B7DB8D2BFDCFC800DEDAB9 /* EventList.swift in Sources */,
+				46B7DBA62BFE96B000DEDAB9 /* MockURLSession.swift in Sources */,
+				46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkService.swift in Sources */,
 				46B7DB892BFDCFAF00DEDAB9 /* StoryList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46B7DB5F2BFDC41900DEDAB9 /* MarvelDemoAppTests.swift in Sources */,
+				46B7DB9E2BFE912B00DEDAB9 /* URLRequestNetworkServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +582,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WC3CDPK7H2;
@@ -550,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dabdeveloper.marvel.demo.ios.MarvelDemoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelDemoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarvelDemoApp";
@@ -561,6 +604,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WC3CDPK7H2;
