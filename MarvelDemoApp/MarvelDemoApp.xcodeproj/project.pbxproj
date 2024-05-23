@@ -56,6 +56,11 @@
 		46B8DFD02BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFCF2BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift */; };
 		46B8DFD22BFFDE2E0034274B /* MockFallbackCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */; };
 		46B8DFD62BFFE0E10034274B /* MockNullCharacterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */; };
+		46B8DFD82BFFE33D0034274B /* NetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD72BFFE33D0034274B /* NetworkServiceFactory.swift */; };
+		46B8DFDA2BFFE3D90034274B /* MockNetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD92BFFE3D90034274B /* MockNetworkServiceFactory.swift */; };
+		46B8DFDC2BFFE43D0034274B /* APIClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */; };
+		46B8DFDE2BFFE5110034274B /* CharacterServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDD2BFFE5110034274B /* CharacterServiceFactory.swift */; };
+		46B8DFE02BFFE5290034274B /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDF2BFFE5290034274B /* CharacterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +132,11 @@
 		46B8DFCF2BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceWithFallbackTests.swift; sourceTree = "<group>"; };
 		46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFallbackCharacterService.swift; sourceTree = "<group>"; };
 		46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNullCharacterAPIService.swift; sourceTree = "<group>"; };
+		46B8DFD72BFFE33D0034274B /* NetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceFactory.swift; sourceTree = "<group>"; };
+		46B8DFD92BFFE3D90034274B /* MockNetworkServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkServiceFactory.swift; sourceTree = "<group>"; };
+		46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientFactory.swift; sourceTree = "<group>"; };
+		46B8DFDD2BFFE5110034274B /* CharacterServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceFactory.swift; sourceTree = "<group>"; };
+		46B8DFDF2BFFE5290034274B /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +266,8 @@
 				46B7DB9F2BFE965C00DEDAB9 /* Request.swift */,
 				46B7DBA12BFE967900DEDAB9 /* Response.swift */,
 				46B7DB982BFE855700DEDAB9 /* NetworkService.swift */,
+				46B8DFD72BFFE33D0034274B /* NetworkServiceFactory.swift */,
+				46B8DFD92BFFE3D90034274B /* MockNetworkServiceFactory.swift */,
 				46B7DBA92BFE981600DEDAB9 /* URLRequest */,
 			);
 			path = Network;
@@ -286,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				46B7DBC92BFEB0C500DEDAB9 /* APIClient.swift */,
+				46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */,
 				46B7DBC62BFEB08E00DEDAB9 /* Characters */,
 			);
 			path = API;
@@ -294,6 +307,8 @@
 		46B7DBC62BFEB08E00DEDAB9 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				46B8DFDF2BFFE5290034274B /* CharacterService.swift */,
+				46B8DFDD2BFFE5110034274B /* CharacterServiceFactory.swift */,
 				46B7DBC72BFEB09F00DEDAB9 /* CharacterAPIService.swift */,
 				46B8DFCB2BFFD8E00034274B /* CharacterStorageService.swift */,
 				46B8DFCD2BFFD8F60034274B /* CharacterServiceWithFallback.swift */,
@@ -481,18 +496,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B7DB7F2BFDCE1800DEDAB9 /* CharacterDataWrapper.swift in Sources */,
+				46B8DFDA2BFFE3D90034274B /* MockNetworkServiceFactory.swift in Sources */,
+				46B8DFDE2BFFE5110034274B /* CharacterServiceFactory.swift in Sources */,
 				46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */,
 				46B7DB812BFDCE5E00DEDAB9 /* CharacterDataContainer.swift in Sources */,
 				46B7DBCA2BFEB0C500DEDAB9 /* APIClient.swift in Sources */,
 				46B8DF8E2BFF7C650034274B /* JSONParser.swift in Sources */,
 				46B7DBA82BFE96D300DEDAB9 /* MockURLRequestBuilder.swift in Sources */,
 				46B8DFCE2BFFD8F60034274B /* CharacterServiceWithFallback.swift in Sources */,
+				46B8DFE02BFFE5290034274B /* CharacterService.swift in Sources */,
 				46B7DBA22BFE967900DEDAB9 /* Response.swift in Sources */,
 				46B7DB872BFDCF9D00DEDAB9 /* ComicSummary.swift in Sources */,
+				46B8DFDC2BFFE43D0034274B /* APIClientFactory.swift in Sources */,
 				46B7DB8B2BFDCFBB00DEDAB9 /* SeriesList.swift in Sources */,
 				46B8DFCC2BFFD8E00034274B /* CharacterStorageService.swift in Sources */,
 				46B7DB832BFDCEB500DEDAB9 /* Character.swift in Sources */,
 				46B7DB852BFDCF8B00DEDAB9 /* ComicList.swift in Sources */,
+				46B8DFD82BFFE33D0034274B /* NetworkServiceFactory.swift in Sources */,
 				46B7DB932BFDCFF600DEDAB9 /* Image.swift in Sources */,
 				46B7DBBE2BFEA8C000DEDAB9 /* MD5Hasher.swift in Sources */,
 				46B7DB502BFDC41800DEDAB9 /* ContentView.swift in Sources */,

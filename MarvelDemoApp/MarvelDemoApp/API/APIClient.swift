@@ -1,6 +1,6 @@
 import Foundation
 
-protocol APIClient {
+protocol APIClientSchema {
     func getHostURL() -> String
     func performRequest(_ request: APIRequest) async throws -> Response
 }
@@ -13,7 +13,7 @@ struct APIRequest {
     let body: Data?
 }
 
-struct MarvelAPIClient: APIClient {
+struct APIClient: APIClientSchema {
     let networkClient: NetworkServiceSchema
     let environmentReader: EnvironmentReaderSchema
     let hasher: HasherSchema
