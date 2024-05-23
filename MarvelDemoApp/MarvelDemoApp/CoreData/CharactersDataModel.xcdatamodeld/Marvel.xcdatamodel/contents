@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CharacterEntity" representedClassName="CharacterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modified" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <relationship name="comics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ComicListEntity"/>
+        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventListEntity"/>
+        <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SeriesListEntity"/>
+        <relationship name="stories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoryListEntity"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageEntity"/>
+        <relationship name="urls" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UrlEntity"/>
+    </entity>
+    <entity name="ComicListEntity" representedClassName="ComicListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComicSummaryEntity"/>
+    </entity>
+    <entity name="ComicSummaryEntity" representedClassName="ComicSummaryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="EventListEntity" representedClassName="EventListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventSummaryEntity"/>
+    </entity>
+    <entity name="EventSummaryEntity" representedClassName="EventSummaryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ImageEntity" representedClassName="ImageEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="path" optional="YES" attributeType="String"/>
+        <attribute name="thumbnailExtension" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SeriesListEntity" representedClassName="SeriesListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SeriesSummaryEntity"/>
+    </entity>
+    <entity name="SeriesSummaryEntity" representedClassName="SeriesSummaryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="StoryListEntity" representedClassName="StoryListEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="available" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionURI" optional="YES" attributeType="String"/>
+        <attribute name="returned" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StorySummaryEntity"/>
+    </entity>
+    <entity name="StorySummaryEntity" representedClassName="StorySummaryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="UrlEntity" representedClassName="UrlEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+</model>
