@@ -2,9 +2,9 @@ import XCTest
 
 @testable import MarvelDemoApp
 
-class CharacterServiceTests: XCTestCase {
+class CharacterAPIServiceTests: XCTestCase {
     func testGetCharactersWithMockService() async throws {
-        let mockService = MockCharacterService()
+        let mockService = MockCharacterAPIService()
         
         let parameters = CharacterGetParameters()
         

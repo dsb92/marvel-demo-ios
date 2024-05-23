@@ -34,7 +34,7 @@ protocol CharacterServiceSchema {
     ) async throws -> CharacterDataWrapper?
 }
 
-struct CharacterService: CharacterServiceSchema {
+struct CharacterAPIService: CharacterServiceSchema {
     let apiClient: APIClient
     let parser: JSONParserSchema
     
@@ -50,38 +50,5 @@ struct CharacterService: CharacterServiceSchema {
         )
         let response = try await apiClient.performRequest(request)
         return try parser.parse(CharacterDataWrapper.self, from: response.data)
-    }
-}
-
-struct CharacterPersisterService: CharacterServiceSchema {
-    let persister: CharactersPersistenceSchema
-    
-    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper? {
-        let characters = persister.fetchAll()
-        return CharacterDataWrapper(
-            code: nil, 
-            status: nil,
-            copyright: nil,
-            attributionText: nil,
-            attributionHTML: nil,
-            data: CharacterDataContainer(
-                offset: nil,
-                limit: nil,
-                total: nil,
-                count: nil,
-                results: characters
-            ), 
-            etag: nil
-        )
-    }
-}
-
-struct MockCharacterService: CharacterServiceSchema {
-    private let JSON_FILE_NAME = "CharacterDataWrapper.json"
-    
-    func getCharacters(
-        parameters: CharacterGetParameters
-    ) async throws -> CharacterDataWrapper? {
-        load(JSON_FILE_NAME)
     }
 }

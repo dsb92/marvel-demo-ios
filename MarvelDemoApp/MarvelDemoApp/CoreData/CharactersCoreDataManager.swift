@@ -2,12 +2,12 @@ import CoreData
 import Foundation
 import OSLog
 
-protocol CharactersPersistenceSchema {
+protocol CharactersStorageSchema {
     func save(characters: [´Character´])
     func fetchAll() -> [´Character´]
 }
 
-class CharactersCoreDataManager: CharactersPersistenceSchema {
+class CharactersCoreDataManager: CharactersStorageSchema {
     static let shared = CharactersCoreDataManager()
     
     private init() {}
