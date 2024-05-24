@@ -14,7 +14,7 @@ struct APIRequest {
 }
 
 struct APIClient: APIClientSchema {
-    let networkClient: NetworkServiceSchema
+    let networkClient: NetworkClientSchema
     let environmentReader: EnvironmentReaderSchema
     let hasher: HasherSchema
     

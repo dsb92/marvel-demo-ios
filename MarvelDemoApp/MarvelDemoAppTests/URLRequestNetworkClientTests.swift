@@ -2,7 +2,7 @@ import XCTest
 
 @testable import MarvelDemoApp
 
-class URLRequestNetworkServiceTests: XCTestCase {
+class URLRequestNetworkClientTests: XCTestCase {
     func testPerformRequestSuccess() async throws {
         let mockData = "{\"key\":\"value\"}".data(using: .utf8)
         let mockResponse = HTTPURLResponse(url: URL(string: "https://api.example.com/data")!,
@@ -16,11 +16,11 @@ class URLRequestNetworkServiceTests: XCTestCase {
         
         let urlRequestBuilder = MockURLRequestBuilder()
         
-        let networkService = URLRequestNetworkService(urlRequestBuilder: urlRequestBuilder, urlSession: mockSession)
+        let networkClient = URLRequestNetworkClient(urlRequestBuilder: urlRequestBuilder, urlSession: mockSession)
         
         let request = Request(url: "https://api.example.com/data", method: "GET", headers: nil, body: nil)
         
-        let response = try await networkService.performRequest(request)
+        let response = try await networkClient.performRequest(request)
         
         XCTAssertEqual(response.statusCode, 200)
         XCTAssertEqual(response.data, mockData)
@@ -34,12 +34,12 @@ class URLRequestNetworkServiceTests: XCTestCase {
         
         let mockUrlRequestBuilder = MockURLRequestBuilder()
         
-        let networkService = URLRequestNetworkService(urlRequestBuilder: mockUrlRequestBuilder, urlSession: mockSession)
+        let networkClient = URLRequestNetworkClient(urlRequestBuilder: mockUrlRequestBuilder, urlSession: mockSession)
         
         let request = Request(url: "https://api.example.com/data", method: "GET", headers: nil, body: nil)
         
         do {
-            _ = try await networkService.performRequest(request)
+            _ = try await networkClient.performRequest(request)
             XCTFail("Expected to throw error, but it succeeded")
         } catch {
             XCTAssertEqual(error as? URLError, mockError)

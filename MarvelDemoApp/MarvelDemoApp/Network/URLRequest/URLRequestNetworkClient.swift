@@ -27,7 +27,7 @@ extension URLSession: URLSessionSchema {
     }
 }
 
-struct URLRequestNetworkService: NetworkServiceSchema {
+struct URLRequestNetworkClient: NetworkClientSchema {
     let urlRequestBuilder: URLRequestBuilderSchema
     let urlSession: URLSessionSchema
     
