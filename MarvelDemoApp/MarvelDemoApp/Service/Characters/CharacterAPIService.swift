@@ -17,4 +17,6 @@ struct CharacterAPIService: CharacterServiceSchema {
         let response = try await apiClient.performRequest(request)
         return try parser.parse(CharacterDataWrapper.self, from: response.data)
     }
+    
+    func saveCharacters(_ characters: CharacterDataWrapper?) {}
 }

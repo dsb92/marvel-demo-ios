@@ -30,4 +30,6 @@ struct MockFallbackCharacterService: CharacterServiceSchema {
             etag: nil
         )
     }
+    
+    func saveCharacters(_ characters: CharacterDataWrapper?) {}
 }

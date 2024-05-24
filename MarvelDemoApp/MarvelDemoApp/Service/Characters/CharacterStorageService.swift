@@ -19,4 +19,9 @@ struct CharacterStorageService: CharacterServiceSchema {
             etag: nil
         )
     }
+    
+    func saveCharacters(_ characters: CharacterDataWrapper?) {
+        guard let wrapper = characters, let results = wrapper.data?.results else { return }
+        storage.save(characters: results)
+    }
 }

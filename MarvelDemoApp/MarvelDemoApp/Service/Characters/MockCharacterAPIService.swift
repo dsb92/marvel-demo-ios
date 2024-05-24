@@ -6,4 +6,6 @@ struct MockCharacterAPIService: CharacterServiceSchema {
     ) async throws -> CharacterDataWrapper? {
         load(JSON_FILE_NAME)
     }
+    
+    func saveCharacters(_ characters: CharacterDataWrapper?) {}
 }

@@ -4,4 +4,6 @@ struct MockNullCharacterAPIService: CharacterServiceSchema {
     ) async throws -> CharacterDataWrapper? {
         nil
     }
+    
+    func saveCharacters(_ characters: CharacterDataWrapper?) {}
 }
