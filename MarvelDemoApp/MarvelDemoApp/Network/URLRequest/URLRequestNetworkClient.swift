@@ -1,4 +1,5 @@
 import Foundation
+import OSLog
 
 protocol URLRequestBuilderSchema {
     func buildURLRequest(from request: Request) throws -> URLRequest
@@ -31,6 +32,8 @@ struct URLRequestNetworkClient: NetworkClientSchema {
     let urlRequestBuilder: URLRequestBuilderSchema
     let urlSession: URLSessionSchema
     
+    private let logger = Logger(subsystem: "NetworkClient", category: "URLRequest")
+    
     func performRequest(_ request: Request) async throws -> Response {
         let urlRequest = try urlRequestBuilder.buildURLRequest(from: request)
         
@@ -39,6 +42,9 @@ struct URLRequestNetworkClient: NetworkClientSchema {
         guard let httpResponse = urlResponse as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
+        
+        logger.debug("\(urlRequest)")
+        logger.debug("\(urlResponse)")
         
         let responseHeaders = httpResponse.allHeaderFields as? [String: String] ?? [:]
         let response = Response(data: data, statusCode: httpResponse.statusCode, headers: responseHeaders)
