@@ -12,7 +12,7 @@ struct ItemListsView: View {
             .background(color)
             .foregroundStyle(.white)
         ScrollView(.horizontal) {
-            LazyHStack {
+            HStack {
                 ForEach(items, id: \.id) { item in
                     Text(item.name)
                         .padding()
@@ -57,7 +57,7 @@ struct ItemView: View {
     let itemViewModel: ItemViewModel
     
     var body: some View {
-        LazyVStack {
+        VStack {
             Thumbnail(url: itemViewModel.url)
             Text(itemViewModel.title)
                 .font(.title)
@@ -80,10 +80,14 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
     }
     
     var body: some View {
-        ScrollView {
+        List {
             ForEach($viewModel.itemViewModel, id: \.id) { itemViewModel in
                 ItemView(itemViewModel: itemViewModel.wrappedValue)
             }
+        }
+        .listStyle(.plain)
+        .refreshable {
+            await viewModel.loadItems()
         }
         .task {
             await viewModel.loadItems()
