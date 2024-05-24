@@ -85,11 +85,7 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
             }
         }
         .task {
-            do {
-                try await viewModel.loadItems()
-            } catch {
-                print(error)
-            }
+            await viewModel.loadItems()
         }
     }
 }

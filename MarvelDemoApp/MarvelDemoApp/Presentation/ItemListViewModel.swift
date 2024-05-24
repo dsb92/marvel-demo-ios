@@ -58,7 +58,7 @@ struct ItemViewModel: Identifiable {
 
 protocol ItemListViewModelSchema: ObservableObject {
     var itemViewModel: [ItemViewModel] { get set }
-    func loadItems() async throws
+    func loadItems() async
 }
 
 final class ItemListViewModel: ItemListViewModelSchema {
@@ -69,7 +69,12 @@ final class ItemListViewModel: ItemListViewModelSchema {
         self.itemService = itemService
     }
     
-    func loadItems() async throws {
-        itemViewModel = try await itemService.loadItems()
+    @MainActor
+    func loadItems() async {
+        do {
+            itemViewModel = try await itemService.loadItems()
+        } catch {
+            
+        }
     }
 }
