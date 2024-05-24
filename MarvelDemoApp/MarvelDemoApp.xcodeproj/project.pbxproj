@@ -65,6 +65,9 @@
 		46B8E04B2C0100720034274B /* Nameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E04A2C0100720034274B /* Nameable.swift */; };
 		46B8E04F2C0108EA0034274B /* ItemsServiceSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E04E2C0108EA0034274B /* ItemsServiceSchema.swift */; };
 		46B8E0532C010A2E0034274B /* ItemsServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0522C010A2E0034274B /* ItemsServiceFactory.swift */; };
+		46B8E05A2C01339D0034274B /* MockCharacterServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */; };
+		46B8E05C2C01348E0034274B /* MockItemsServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */; };
+		46B8E05E2C0135120034274B /* MockCharacterItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,9 @@
 		46B8E04E2C0108EA0034274B /* ItemsServiceSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsServiceSchema.swift; sourceTree = "<group>"; };
 		46B8E0522C010A2E0034274B /* ItemsServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsServiceFactory.swift; sourceTree = "<group>"; };
 		46B8E0562C011AA70034274B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterServiceFactory.swift; sourceTree = "<group>"; };
+		46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemsServiceFactory.swift; sourceTree = "<group>"; };
+		46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterItemsServiceAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,7 @@
 				46B7DBC72BFEB09F00DEDAB9 /* CharacterAPIService.swift */,
 				46B8DFCB2BFFD8E00034274B /* CharacterStorageService.swift */,
 				46B8DFCD2BFFD8F60034274B /* CharacterServiceWithFallback.swift */,
+				46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */,
 				46B8DFC92BFFD8C70034274B /* MockCharacterAPIService.swift */,
 				46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */,
 				46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */,
@@ -327,6 +334,8 @@
 				46B8E03A2C00B4760034274B /* Item.swift */,
 				46B8E0522C010A2E0034274B /* ItemsServiceFactory.swift */,
 				46B8E04E2C0108EA0034274B /* ItemsServiceSchema.swift */,
+				46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */,
+				46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -467,9 +476,11 @@
 				46B8DFDA2BFFE3D90034274B /* MockNetworkClientFactory.swift in Sources */,
 				46B8DFDE2BFFE5110034274B /* CharacterServiceFactory.swift in Sources */,
 				46B8E0492C00CB840034274B /* ItemListViewModel.swift in Sources */,
+				46B8E05E2C0135120034274B /* MockCharacterItemsServiceAdapter.swift in Sources */,
 				46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */,
 				46B7DB812BFDCE5E00DEDAB9 /* CharacterDataContainer.swift in Sources */,
 				46B7DBCA2BFEB0C500DEDAB9 /* APIClient.swift in Sources */,
+				46B8E05C2C01348E0034274B /* MockItemsServiceFactory.swift in Sources */,
 				46B8E03B2C00B4760034274B /* Item.swift in Sources */,
 				46B8DFE62C0064760034274B /* ItemListView.swift in Sources */,
 				46B8DF8E2BFF7C650034274B /* JSONParser.swift in Sources */,
@@ -488,6 +499,7 @@
 				46B8DFD82BFFE33D0034274B /* NetworkClientFactory.swift in Sources */,
 				46B7DB932BFDCFF600DEDAB9 /* Image.swift in Sources */,
 				46B8E04F2C0108EA0034274B /* ItemsServiceSchema.swift in Sources */,
+				46B8E05A2C01339D0034274B /* MockCharacterServiceFactory.swift in Sources */,
 				46B7DBBE2BFEA8C000DEDAB9 /* MD5Hasher.swift in Sources */,
 				46B8E04B2C0100720034274B /* Nameable.swift in Sources */,
 				46B8DF952BFF7DF80034274B /* Dictionary+QueryParameter.swift in Sources */,

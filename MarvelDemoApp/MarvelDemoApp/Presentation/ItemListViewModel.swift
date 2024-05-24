@@ -4,7 +4,7 @@ import OSLog
 
 extension ItemViewModel {
     init(from character: ´Character´) {
-        self.id = character.id ?? 0
+        self.id = character.id
         if let thumbnail = character.thumbnail, let path = thumbnail.path, let thumbnailExtension = thumbnail.thumbnailExtension {
             self.url = URL(string: "\(path).\(thumbnailExtension)")
         }
@@ -48,7 +48,7 @@ extension ItemViewModel {
 }
 
 struct ItemViewModel: Identifiable {
-    let id: Int
+    var id: Int?
     var url: URL?
     var title: String = ""
     var description: String = ""
