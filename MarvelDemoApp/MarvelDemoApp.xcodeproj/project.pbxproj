@@ -180,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				46B8E0562C011AA70034274B /* Info.plist */,
+				46B7DB4D2BFDC41800DEDAB9 /* MarvelDemoApp.swift */,
 				46B8DFA12BFFA6040034274B /* CoreData */,
 				46B8DFE12C0063A10034274B /* Presentation */,
 				46B8E0572C01227D0034274B /* Service */,
@@ -188,8 +189,6 @@
 				46B7DBBA2BFEA86300DEDAB9 /* Helpers */,
 				46B8DF912BFF7DDF0034274B /* Extensions */,
 				46B8DF992BFFA2500034274B /* Resources */,
-				46B7DB4D2BFDC41800DEDAB9 /* MarvelDemoApp.swift */,
-				46B7DB512BFDC41800DEDAB9 /* Assets.xcassets */,
 				46B7DB532BFDC41800DEDAB9 /* Preview Content */,
 			);
 			path = MarvelDemoApp;
@@ -288,6 +287,7 @@
 		46B8DF992BFFA2500034274B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46B7DB512BFDC41800DEDAB9 /* Assets.xcassets */,
 				46B8DF9A2BFFA2500034274B /* JSON */,
 			);
 			path = Resources;

@@ -71,6 +71,7 @@ struct ItemView: View {
         }
     }
 }
+
 struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
     @StateObject private var viewModel: ViewModel
 
