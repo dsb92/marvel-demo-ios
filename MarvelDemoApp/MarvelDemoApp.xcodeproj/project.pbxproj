@@ -61,6 +61,8 @@
 		46B8DFDC2BFFE43D0034274B /* APIClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */; };
 		46B8DFDE2BFFE5110034274B /* CharacterServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDD2BFFE5110034274B /* CharacterServiceFactory.swift */; };
 		46B8DFE02BFFE5290034274B /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDF2BFFE5290034274B /* CharacterService.swift */; };
+		46B8DFE42C0064300034274B /* CharactersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFE32C0064300034274B /* CharactersScreen.swift */; };
+		46B8DFE62C0064760034274B /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFE52C0064760034274B /* CharactersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientFactory.swift; sourceTree = "<group>"; };
 		46B8DFDD2BFFE5110034274B /* CharacterServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceFactory.swift; sourceTree = "<group>"; };
 		46B8DFDF2BFFE5290034274B /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		46B8DFE32C0064300034274B /* CharactersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersScreen.swift; sourceTree = "<group>"; };
+		46B8DFE52C0064760034274B /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				46B8DFA12BFFA6040034274B /* CoreData */,
 				46B8DF992BFFA2500034274B /* Resources */,
 				46B8DF912BFF7DDF0034274B /* Extensions */,
+				46B8DFE12C0063A10034274B /* Presentation */,
 				46B7DBC52BFEB08300DEDAB9 /* API */,
 				46B7DBBA2BFEA86300DEDAB9 /* Helpers */,
 				46B7DB972BFDD66F00DEDAB9 /* Network */,
@@ -362,6 +367,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		46B8DFE12C0063A10034274B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				46B8DFE32C0064300034274B /* CharactersScreen.swift */,
+				46B8DFE52C0064760034274B /* CharactersView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -501,6 +515,7 @@
 				46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */,
 				46B7DB812BFDCE5E00DEDAB9 /* CharacterDataContainer.swift in Sources */,
 				46B7DBCA2BFEB0C500DEDAB9 /* APIClient.swift in Sources */,
+				46B8DFE62C0064760034274B /* CharactersView.swift in Sources */,
 				46B8DF8E2BFF7C650034274B /* JSONParser.swift in Sources */,
 				46B7DBA82BFE96D300DEDAB9 /* MockURLRequestBuilder.swift in Sources */,
 				46B8DFCE2BFFD8F60034274B /* CharacterServiceWithFallback.swift in Sources */,
@@ -532,6 +547,7 @@
 				46B8DFA92BFFA7040034274B /* CharactersCoreDataManager.swift in Sources */,
 				46B8DFC42BFFC40B0034274B /* SeriesSummary.swift in Sources */,
 				46B8DFD62BFFE0E10034274B /* MockNullCharacterAPIService.swift in Sources */,
+				46B8DFE42C0064300034274B /* CharactersScreen.swift in Sources */,
 				46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkClient.swift in Sources */,
 				46B8DFC62BFFC4F70034274B /* Optional+NSSet+Array.swift in Sources */,
 				46B8DFD22BFFDE2E0034274B /* MockFallbackCharacterService.swift in Sources */,
