@@ -20,11 +20,11 @@ struct APIClient: APIClientSchema {
     
     func performRequest(_ request: APIRequest) async throws -> Response {
         let authParameters = [
-            "apiKey": getAPIKey(),
+            "apikey": getAPIKey(),
             "hash": getHash(),
             "ts": getTS()
         ]
-        let url = getHostURL() + request.path + request.parameters.merge(with: authParameters).toQueryString()
+        let url = getHostURL() + request.path + "?" + request.parameters.merge(with: authParameters).toQueryString()
         return try await networkClient.performRequest(Request(url: url, method: request.method, headers: request.headers, body: request.body))
     }
 
@@ -46,6 +46,7 @@ struct APIClient: APIClientSchema {
     
     private func getTS() -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         return dateFormatter.string(from: Date.now)
     }
 }
