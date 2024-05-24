@@ -64,8 +64,8 @@ protocol ItemListViewModelSchema: ObservableObject {
 final class ItemListViewModel: ItemListViewModelSchema {
     @Published var itemViewModel: [ItemViewModel] = []
     
-    private var itemService: ItemsService
-    init(itemService: ItemsService) {
+    private var itemService: ItemsServiceSchema
+    init(itemService: ItemsServiceSchema) {
         self.itemService = itemService
     }
     

@@ -1,8 +1,8 @@
-protocol ItemsService {
+protocol ItemsServiceSchema {
     func loadItems() async throws -> [ItemViewModel]
 }
 
-struct CharacterItemsServiceAdapter: ItemsService {
+struct CharacterItemsServiceAdapter: ItemsServiceSchema {
     let service: CharacterServiceSchema
     
     func loadItems() async throws -> [ItemViewModel] {

@@ -1,9 +1,9 @@
 protocol ItemsServiceFactorySchema {
-    func createItemsService() -> ItemsService
+    func createItemsService() -> ItemsServiceSchema
 }
 
 struct ItemsServiceFactory: ItemsServiceFactorySchema {
-    func createItemsService() -> ItemsService {
+    func createItemsService() -> ItemsServiceSchema {
         CharacterItemsServiceAdapter(service: CharacterServiceFactory().createCharacterService())
     }
 }
