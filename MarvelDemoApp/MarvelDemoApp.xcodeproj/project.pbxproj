@@ -149,6 +149,7 @@
 		46B8E04A2C0100720034274B /* Nameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nameable.swift; sourceTree = "<group>"; };
 		46B8E04E2C0108EA0034274B /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		46B8E0522C010A2E0034274B /* ItemsServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsServiceFactory.swift; sourceTree = "<group>"; };
+		46B8E0562C011AA70034274B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +200,7 @@
 		46B7DB4C2BFDC41800DEDAB9 /* MarvelDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				46B8E0562C011AA70034274B /* Info.plist */,
 				46B8DFA12BFFA6040034274B /* CoreData */,
 				46B8DF992BFFA2500034274B /* Resources */,
 				46B8DF912BFF7DDF0034274B /* Extensions */,
@@ -740,6 +742,7 @@
 				DEVELOPMENT_TEAM = WC3CDPK7H2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -769,6 +772,7 @@
 				DEVELOPMENT_TEAM = WC3CDPK7H2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarvelDemoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
