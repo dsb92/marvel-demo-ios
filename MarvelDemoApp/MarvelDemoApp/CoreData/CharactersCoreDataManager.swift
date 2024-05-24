@@ -148,9 +148,9 @@ class CharactersCoreDataManager: CharactersStorageSchema {
                     urls: entity.urls.array(of: Url.self),
                     thumbnail: ´Image´(path: entity.thumbnail?.path, thumbnailExtension: entity.thumbnail?.thumbnailExtension),
                     comics: ComicList(available: Int(entity.comics?.available ?? 0), returned: Int(entity.comics?.returned ?? 0), collectionURI: entity.comics?.collectionURI, items: entity.comics?.items.array(of: ComicSummary.self)),
-                    stories: nil,
-                    events: nil,
-                    series: nil
+                    stories: StoryList(available: Int(entity.stories?.available ?? 0), returned: Int(entity.stories?.returned ?? 0), collectionURI: entity.stories?.collectionURI, items: entity.stories?.items.array(of: StorySummary.self)),
+                    events: EventList(available: Int(entity.events?.available ?? 0), returned: Int(entity.events?.returned ?? 0), collectionURI: entity.events?.collectionURI, items: entity.events?.items.array(of: EventSummary.self)),
+                    series: SeriesList(available: Int(entity.series?.available ?? 0), returned: Int(entity.series?.returned ?? 0), collectionURI: entity.series?.collectionURI, items: entity.series?.items.array(of: SeriesSummary.self))
                 )
             }
         } catch {

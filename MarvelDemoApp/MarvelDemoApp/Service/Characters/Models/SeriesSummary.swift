@@ -4,5 +4,5 @@ struct SeriesSummary: Codable {
     let name: String?
 }
 
-
+extension SeriesSummary: Hashable {}
 extension SeriesSummary: Nameable {}

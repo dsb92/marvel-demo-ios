@@ -4,4 +4,5 @@ struct EventSummary: Codable {
     let name: String?
 }
 
+extension EventSummary: Hashable {}
 extension EventSummary: Nameable {}

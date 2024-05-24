@@ -5,4 +5,5 @@ struct StorySummary: Codable {
     let type: String?
 }
 
+extension StorySummary: Hashable {}
 extension StorySummary: Nameable {}
