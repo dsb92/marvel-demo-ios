@@ -5,3 +5,4 @@ struct ComicSummary: Codable {
 }
 
 extension ComicSummary: Hashable {}
+extension ComicSummary: Nameable {}

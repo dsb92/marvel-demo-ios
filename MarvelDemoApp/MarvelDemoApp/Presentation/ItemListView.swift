@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ItemListView: View {
+struct ItemListsView: View {
     let title: String
     let color: Color
     let items: [Item]
@@ -32,10 +32,10 @@ struct ItemListView: View {
 }
 
 struct Thumbnail: View {
-    let url: String
+    let url: URL?
 
     var body: some View {
-        AsyncImage(url: URL(string: url)) { phase in
+        AsyncImage(url: url) { phase in
             switch phase {
               case .failure:
                   Image(systemName: "photo")
@@ -53,67 +53,54 @@ struct Thumbnail: View {
     }
 }
 
-extension CharactersView {
-    struct CharacterThumbnail: View {
-        let url: String
-        
-        var body: some View {
-            Thumbnail(url: url)
-        }
-    }
-}
-
-extension CharactersView {
-    struct CharacterItems: View {
-        let title: String
-        let color: Color
-        let items: [Item]
-        
-        var body: some View {
-            ItemListView(title: title, color: color, items: items)
-        }
-    }
-}
-
-extension CharactersView {
-    struct CharacterView: View {
-        let character: CharacterItem
-        
-        var body: some View {
-            LazyVStack {
-                CharacterThumbnail(url: character.url)
-                Text(character.name)
-                    .font(.title)
-                    .frame(maxWidth: .infinity)
-                    .foregroundStyle(.black)
-                Text(character.description)
-                    .font(.title2)
-                ForEach(character.itemLists, id: \.id) { itemList in
-                    CharacterItems(title: itemList.title, color: itemList.color, items: itemList.items)
-                }
+struct ItemView: View {
+    let itemViewModel: ItemViewModel
+    
+    var body: some View {
+        LazyVStack {
+            Thumbnail(url: itemViewModel.url)
+            Text(itemViewModel.title)
+                .font(.title)
+                .frame(maxWidth: .infinity)
+                .foregroundStyle(.black)
+            Text(itemViewModel.description)
+                .font(.title2)
+            ForEach(itemViewModel.itemLists, id: \.id) { itemList in
+                ItemListsView(title: itemList.title, color: itemList.color, items: itemList.items)
             }
         }
     }
 }
+struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
+    @StateObject private var viewModel: ViewModel
 
-struct CharactersView: View {
-    let characterItemList: CharacterItemList
+    init(viewModel: @autoclosure @escaping () -> ViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel())
+    }
     
     var body: some View {
         ScrollView {
-            ForEach(characterItemList.characters, id: \.id) { character in
-                CharacterView(character: character)
+            ForEach($viewModel.itemViewModel, id: \.id) { itemViewModel in
+                ItemView(itemViewModel: itemViewModel.wrappedValue)
+            }
+        }
+        .task {
+            do {
+                try await viewModel.loadItems()
+            } catch {
+                print(error)
             }
         }
     }
 }
 
-private extension Array where Element == CharacterItem {
+private extension Array where Element == ItemViewModel {
     static func mock() -> Self {
         [
-            CharacterItem(
-                url: "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg",
-                name: "3-D Man",
+            ItemViewModel(
+                id: 0,
+                url: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"),
+                title: "3-D Man",
                 description: "",
                 itemLists: .mock()
             )
@@ -140,6 +127,6 @@ private extension Array where Element == Item {
     }
 }
 
-#Preview {
-    CharactersView(characterItemList: .init(characters: .mock()))
-}
+//#Preview {
+//    ItemListView(itemListViewModel: .init(itemService: <#T##ItemService#>)))
+//}

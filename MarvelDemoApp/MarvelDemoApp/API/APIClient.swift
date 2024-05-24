@@ -29,7 +29,7 @@ struct APIClient: APIClientSchema {
     }
 
     func getHostURL() -> String {
-        "http://gateway.marvel.com"
+        "https://gateway.marvel.com"
     }
     
     private func getAPIKey() -> String {
