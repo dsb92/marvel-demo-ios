@@ -1,12 +1,9 @@
 import SwiftUI
 
 struct CharactersScreen: View {
-    
-    var body: some View {
-        CharactersView()
-    }
-}
+    let characterItemList: CharacterItemList
 
-#Preview {
-    CharactersScreen()
+    var body: some View {
+        CharactersView(characterItemList: characterItemList)
+    }
 }

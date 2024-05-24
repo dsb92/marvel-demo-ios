@@ -63,6 +63,10 @@
 		46B8DFE02BFFE5290034274B /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDF2BFFE5290034274B /* CharacterService.swift */; };
 		46B8DFE42C0064300034274B /* CharactersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFE32C0064300034274B /* CharactersScreen.swift */; };
 		46B8DFE62C0064760034274B /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFE52C0064760034274B /* CharactersView.swift */; };
+		46B8E03B2C00B4760034274B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E03A2C00B4760034274B /* Item.swift */; };
+		46B8E03D2C00B4A30034274B /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E03C2C00B4A30034274B /* ItemList.swift */; };
+		46B8E0432C00B5820034274B /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0422C00B5820034274B /* CharacterItem.swift */; };
+		46B8E0452C00B5BC0034274B /* CharacterItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0442C00B5BC0034274B /* CharacterItemList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +145,10 @@
 		46B8DFDF2BFFE5290034274B /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		46B8DFE32C0064300034274B /* CharactersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersScreen.swift; sourceTree = "<group>"; };
 		46B8DFE52C0064760034274B /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		46B8E03A2C00B4760034274B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		46B8E03C2C00B4A30034274B /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		46B8E0422C00B5820034274B /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
+		46B8E0442C00B5BC0034274B /* CharacterItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +380,10 @@
 			children = (
 				46B8DFE32C0064300034274B /* CharactersScreen.swift */,
 				46B8DFE52C0064760034274B /* CharactersView.swift */,
+				46B8E0442C00B5BC0034274B /* CharacterItemList.swift */,
+				46B8E0422C00B5820034274B /* CharacterItem.swift */,
+				46B8E03A2C00B4760034274B /* Item.swift */,
+				46B8E03C2C00B4A30034274B /* ItemList.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -515,11 +527,14 @@
 				46B7DBA02BFE965C00DEDAB9 /* Request.swift in Sources */,
 				46B7DB812BFDCE5E00DEDAB9 /* CharacterDataContainer.swift in Sources */,
 				46B7DBCA2BFEB0C500DEDAB9 /* APIClient.swift in Sources */,
+				46B8E03B2C00B4760034274B /* Item.swift in Sources */,
 				46B8DFE62C0064760034274B /* CharactersView.swift in Sources */,
 				46B8DF8E2BFF7C650034274B /* JSONParser.swift in Sources */,
 				46B7DBA82BFE96D300DEDAB9 /* MockURLRequestBuilder.swift in Sources */,
+				46B8E0452C00B5BC0034274B /* CharacterItemList.swift in Sources */,
 				46B8DFCE2BFFD8F60034274B /* CharacterServiceWithFallback.swift in Sources */,
 				46B8DFE02BFFE5290034274B /* CharacterService.swift in Sources */,
+				46B8E03D2C00B4A30034274B /* ItemList.swift in Sources */,
 				46B7DBA22BFE967900DEDAB9 /* Response.swift in Sources */,
 				46B7DB872BFDCF9D00DEDAB9 /* ComicSummary.swift in Sources */,
 				46B8DFDC2BFFE43D0034274B /* APIClientFactory.swift in Sources */,
@@ -532,6 +547,7 @@
 				46B7DBBE2BFEA8C000DEDAB9 /* MD5Hasher.swift in Sources */,
 				46B7DB502BFDC41800DEDAB9 /* ContentView.swift in Sources */,
 				46B8DF952BFF7DF80034274B /* Dictionary+QueryParameter.swift in Sources */,
+				46B8E0432C00B5820034274B /* CharacterItem.swift in Sources */,
 				46B7DB4E2BFDC41800DEDAB9 /* MarvelDemoApp.swift in Sources */,
 				46B7DB952BFDD00200DEDAB9 /* Url.swift in Sources */,
 				46B7DB8F2BFDCFD900DEDAB9 /* StorySummary.swift in Sources */,
