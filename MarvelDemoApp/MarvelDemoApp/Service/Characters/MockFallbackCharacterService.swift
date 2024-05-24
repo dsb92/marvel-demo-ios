@@ -1,5 +1,5 @@
 struct MockFallbackCharacterService: CharacterServiceSchema {
-    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper? {
+    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper {
         return CharacterDataWrapper(
             code: nil,
             status: nil,
@@ -31,5 +31,5 @@ struct MockFallbackCharacterService: CharacterServiceSchema {
         )
     }
     
-    func saveCharacters(_ characters: CharacterDataWrapper?) {}
+    func saveCharacters(_ characters: CharacterDataWrapper) {}
 }

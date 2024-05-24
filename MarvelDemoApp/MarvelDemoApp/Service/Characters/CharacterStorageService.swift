@@ -1,7 +1,7 @@
 struct CharacterStorageService: CharacterServiceSchema {
     let storage: CharactersStorageSchema
     
-    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper? {
+    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper {
         let characters = storage.fetchAll()
         return CharacterDataWrapper(
             code: nil,
@@ -20,8 +20,8 @@ struct CharacterStorageService: CharacterServiceSchema {
         )
     }
     
-    func saveCharacters(_ characters: CharacterDataWrapper?) {
-        guard let wrapper = characters, let results = wrapper.data?.results else { return }
+    func saveCharacters(_ characters: CharacterDataWrapper) {
+        guard let results = characters.data?.results else { return }
         storage.save(characters: results)
     }
 }

@@ -6,7 +6,7 @@ struct CharacterAPIService: CharacterServiceSchema {
     
     func getCharacters(
         parameters: CharacterGetParameters
-    ) async throws -> CharacterDataWrapper? {
+    ) async throws -> CharacterDataWrapper {
         let request = APIRequest(
             path: "/v1/public/characters",
             parameters: parameters.toDictionary(),
@@ -18,5 +18,5 @@ struct CharacterAPIService: CharacterServiceSchema {
         return try parser.parse(CharacterDataWrapper.self, from: response.data)
     }
     
-    func saveCharacters(_ characters: CharacterDataWrapper?) {}
+    func saveCharacters(_ characters: CharacterDataWrapper) {}
 }

@@ -1,10 +1,10 @@
-struct MockCharacterAPIService: CharacterServiceSchema {
-    private let JSON_FILE_NAME = "CharacterDataWrapper.json"
-    
+import Foundation
+
+struct MockThrowErrorCharacterAPIService: CharacterServiceSchema {
     func getCharacters(
         parameters: CharacterGetParameters
     ) async throws -> CharacterDataWrapper {
-        load(JSON_FILE_NAME)
+        throw URLError(.badURL)
     }
     
     func saveCharacters(_ characters: CharacterDataWrapper) {}

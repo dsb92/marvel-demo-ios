@@ -2,7 +2,7 @@ struct CharacterServiceWithFallback: CharacterServiceSchema {
     let primary: CharacterServiceSchema
     let fallback: CharacterServiceSchema
     
-    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper? {
+    func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper {
         do {
             let primaryCharacters = try await primary.getCharacters(parameters: parameters)
             fallback.saveCharacters(primaryCharacters)
@@ -14,7 +14,7 @@ struct CharacterServiceWithFallback: CharacterServiceSchema {
         }
     }
     
-    func saveCharacters(_ characters: CharacterDataWrapper?) {}
+    func saveCharacters(_ characters: CharacterDataWrapper) {}
 }
 
 extension CharacterServiceSchema {

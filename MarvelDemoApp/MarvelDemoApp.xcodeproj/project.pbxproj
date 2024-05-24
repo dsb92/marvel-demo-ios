@@ -52,7 +52,7 @@
 		46B8DFCE2BFFD8F60034274B /* CharacterServiceWithFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFCD2BFFD8F60034274B /* CharacterServiceWithFallback.swift */; };
 		46B8DFD02BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFCF2BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift */; };
 		46B8DFD22BFFDE2E0034274B /* MockFallbackCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */; };
-		46B8DFD62BFFE0E10034274B /* MockNullCharacterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */; };
+		46B8DFD62BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD52BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift */; };
 		46B8DFD82BFFE33D0034274B /* NetworkClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD72BFFE33D0034274B /* NetworkClientFactory.swift */; };
 		46B8DFDA2BFFE3D90034274B /* MockNetworkClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFD92BFFE3D90034274B /* MockNetworkClientFactory.swift */; };
 		46B8DFDC2BFFE43D0034274B /* APIClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */; };
@@ -127,7 +127,7 @@
 		46B8DFCD2BFFD8F60034274B /* CharacterServiceWithFallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceWithFallback.swift; sourceTree = "<group>"; };
 		46B8DFCF2BFFDB0C0034274B /* CharacterServiceWithFallbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceWithFallbackTests.swift; sourceTree = "<group>"; };
 		46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFallbackCharacterService.swift; sourceTree = "<group>"; };
-		46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNullCharacterAPIService.swift; sourceTree = "<group>"; };
+		46B8DFD52BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockThrowErrorCharacterAPIService.swift; sourceTree = "<group>"; };
 		46B8DFD72BFFE33D0034274B /* NetworkClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientFactory.swift; sourceTree = "<group>"; };
 		46B8DFD92BFFE3D90034274B /* MockNetworkClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClientFactory.swift; sourceTree = "<group>"; };
 		46B8DFDB2BFFE43D0034274B /* APIClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientFactory.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				46B8DFCD2BFFD8F60034274B /* CharacterServiceWithFallback.swift */,
 				46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */,
 				46B8DFC92BFFD8C70034274B /* MockCharacterAPIService.swift */,
-				46B8DFD52BFFE0E10034274B /* MockNullCharacterAPIService.swift */,
+				46B8DFD52BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift */,
 				46B8DFD12BFFDE2E0034274B /* MockFallbackCharacterService.swift */,
 			);
 			path = Characters;
@@ -517,7 +517,7 @@
 				46B7DBC22BFEAAE200DEDAB9 /* EnvironmentReader.swift in Sources */,
 				46B8DFA92BFFA7040034274B /* CharactersCoreDataManager.swift in Sources */,
 				46B8DFC42BFFC40B0034274B /* SeriesSummary.swift in Sources */,
-				46B8DFD62BFFE0E10034274B /* MockNullCharacterAPIService.swift in Sources */,
+				46B8DFD62BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift in Sources */,
 				46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkClient.swift in Sources */,
 				46B8DFC62BFFC4F70034274B /* Optional+NSSet+Array.swift in Sources */,
 				46B8DFD22BFFDE2E0034274B /* MockFallbackCharacterService.swift in Sources */,
