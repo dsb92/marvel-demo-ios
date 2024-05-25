@@ -68,7 +68,7 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
     @StateObject private var viewModel: ViewModel
     var viewModelFactory: ItemListViewModelFactorySchema
     
-    init(viewModel: @autoclosure @escaping () -> ViewModel, viewModelFactory: ItemListViewModelFactory) {
+    init(viewModel: @autoclosure @escaping () -> ViewModel, viewModelFactory: ItemListViewModelFactorySchema) {
         self._viewModel = StateObject(wrappedValue: viewModel())
         self.viewModelFactory = viewModelFactory
     }
