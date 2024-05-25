@@ -1,36 +1,5 @@
 import SwiftUI
 
-struct ItemListsView: View {
-    let title: String
-    let color: Color
-    let items: [Item]
-    
-    var body: some View {
-        Text(title)
-            .font(.title)
-            .frame(maxWidth: .infinity)
-            .background(color)
-            .foregroundStyle(.white)
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(items, id: \.id) { item in
-                    Text(item.name)
-                        .padding()
-                        .font(.title3)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .background(color)
-                        .foregroundStyle(.white)
-                        .clipShape(.rect(cornerRadius: 25))
-                }
-            }
-            .scrollTargetLayout()
-        }
-        .scrollTargetBehavior(.viewAligned)
-        .safeAreaPadding(.horizontal, 40)
-    }
-}
-
 struct Thumbnail: View {
     let url: URL?
 
@@ -45,7 +14,7 @@ struct Thumbnail: View {
                       .resizable()
                       .aspectRatio(contentMode: .fill)
                       .frame(height: 300)
-                      .clipShape(.rect(cornerRadius: 25))
+                      .clipped()
               default:
                   ProgressView()
               }
@@ -55,24 +24,41 @@ struct Thumbnail: View {
 
 struct ItemView: View {
     let itemViewModel: ItemViewModel
-    
+
     var body: some View {
-        featureCard
-    }
-    
-    var featureCard: some View {
         VStack(spacing: 0.0) {
-            ZStack(alignment: .bottomLeading) {
+            ZStack {
                 Thumbnail(url: itemViewModel.url)
                 
-                VStack(alignment: .leading) {
-                    Text(itemViewModel.title.uppercased())
-                        .font(.title)
-                        .fontWeight(.bold)
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text(itemViewModel.title.uppercased())
+                            .bold()
+                            .font(.system(.largeTitle, design: .rounded))
+                            .foregroundStyle(.white)
+                            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0.0, y: 2.0)
+                            .padding()
+                        Spacer()
+                    }
                 }
-                .padding(16)
             }
         }
+    }
+}
+
+struct CardView: View {
+    let itemViewModel: ItemViewModel
+    
+    var body: some View {
+        ItemView(itemViewModel: itemViewModel)
+            .clipShape(.rect(cornerRadius: 25))
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.black)
+                    .shadow(radius: 1)
+            )
+            .padding([.top, .horizontal])
     }
 }
 
@@ -90,16 +76,18 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
             List {
                 ForEach($viewModel.itemViewModels, id: \.id) { itemViewModel in
                     ZStack {
-                        ItemView(itemViewModel: itemViewModel.wrappedValue)
+                        CardView(itemViewModel: itemViewModel.wrappedValue)
                         NavigationLink(destination: ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))) {
                             EmptyView()
                         }
                         .opacity(0)
                     }
                 }
+                .listRowInsets(EdgeInsets())
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
+            .navigationTitle("Characters")
             .refreshable {
                 viewModel.send(.loadItems)
             }
