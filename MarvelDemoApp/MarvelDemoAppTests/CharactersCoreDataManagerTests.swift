@@ -33,10 +33,10 @@ class CharactersCoreDataManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSaveCharacters() {
+    func testSaveCharacters() async throws {
         let characters = [´Character´(id: 1, name: "Spider-Man", description: "A superhero", modified: nil, resourceURI: nil, urls: [Url(type: nil, url: "http://example.com")], thumbnail: nil, comics: nil, stories: nil, events: nil, series: nil)]
         
-        charactersCoreDataManager.save(characters: characters)
+        try await charactersCoreDataManager.save(characters: characters)
         
         let fetchRequest: NSFetchRequest<CharacterEntity> = CharacterEntity.fetchRequest()
         fetchRequest.relationshipKeyPathsForPrefetching = ["urls"]

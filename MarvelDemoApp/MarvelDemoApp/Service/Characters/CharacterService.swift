@@ -3,7 +3,7 @@ protocol CharacterServiceSchema {
         parameters: CharacterGetParameters
     ) async throws -> CharacterDataWrapper
     
-    func saveCharacters(_ characters: CharacterDataWrapper)
+    func saveCharacters(_ characters: CharacterDataWrapper) async throws
 }
 
 

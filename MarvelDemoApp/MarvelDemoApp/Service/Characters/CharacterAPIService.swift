@@ -18,5 +18,5 @@ struct CharacterAPIService: CharacterServiceSchema {
         return try parser.parse(CharacterDataWrapper.self, from: response.data)
     }
     
-    func saveCharacters(_ characters: CharacterDataWrapper) {}
+    func saveCharacters(_ characters: CharacterDataWrapper) async throws {}
 }
