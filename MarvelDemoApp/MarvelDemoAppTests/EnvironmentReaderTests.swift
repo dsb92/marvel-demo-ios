@@ -14,14 +14,11 @@ class EnvironmentReaderTests: XCTestCase {
     }
     
     func testValueForNonExistingKey() {
-         // Given
          let key = "NON_EXISTING_KEY"
          let mockEnvironmentReader = MockEnvironmentReader(environment: [:])
          
-         // When
          let result = mockEnvironmentReader.value(for: key)
          
-         // Then
          XCTAssertNil(result)
      }
 }

@@ -86,8 +86,7 @@ class CharactersCoreDataManagerTests: XCTestCase {
             XCTAssertEqual(fetchedCharacters.count, 1, "Expected to fetch 1 CharacterEntity")
             let fetchedCharacter = fetchedCharacters.first
             XCTAssertNotNil(fetchedCharacter, "Fetched CharacterEntity should not be nil")
-            
-            // Then
+
             let fetchedUrls = fetchedCharacter?.urls?.allObjects as? [UrlEntity]
             XCTAssertEqual(fetchedUrls?.count, 1, "Expected to fetch 1 UrlEntity")
             let fetchedUrl = fetchedUrls?.first
