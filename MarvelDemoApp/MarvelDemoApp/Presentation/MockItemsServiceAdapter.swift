@@ -5,27 +5,31 @@ struct MockCharacterItemsServiceAdapter: ItemsServiceSchema {
     let service: CharacterServiceSchema
     
     func loadItems() async throws -> [ItemViewModel] {
-        [
-            ItemViewModel(id: 0, url: URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"), title: "3-D Man", description: "", subtitle: "", itemLists: .mock())
-        ]
+        .mock()
     }
 }
 
-private extension Array where Element == ItemViewModel {
+extension ItemViewModel {
+    static func mock() -> Self {
+        ItemViewModel(
+            id: 0,
+            url: URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"),
+            title: "3-D Man",
+            description: "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction! ", subtitle: "",
+            itemLists: .mock()
+        )
+    }
+}
+
+extension Array where Element == ItemViewModel {
     static func mock() -> Self {
         [
-            ItemViewModel(
-                id: 0,
-                url: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"),
-                title: "3-D Man",
-                description: "",
-                itemLists: .mock()
-            )
+            .mock()
         ]
     }
 }
 
-private extension Array where Element == ItemList {
+extension Array where Element == ItemList {
     static func mock() -> Self {
         [
             ItemList(title: "Comics", color: .green, items: .mock(color: .green)),
@@ -36,7 +40,7 @@ private extension Array where Element == ItemList {
     }
 }
 
-private extension Array where Element == Item {
+extension Array where Element == Item {
     static func mock(color: Color) -> Self {
         [
             Item(name: "Avengers: The Initiative (2007) #14")

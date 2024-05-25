@@ -57,16 +57,20 @@ struct ItemView: View {
     let itemViewModel: ItemViewModel
     
     var body: some View {
-        VStack {
-            Thumbnail(url: itemViewModel.url)
-            Text(itemViewModel.title)
-                .font(.title)
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(.black)
-            Text(itemViewModel.description)
-                .font(.title2)
-            ForEach(itemViewModel.itemLists, id: \.id) { itemList in
-                ItemListsView(title: itemList.title, color: itemList.color, items: itemList.items)
+        featureCard
+    }
+    
+    var featureCard: some View {
+        VStack(spacing: 0.0) {
+            ZStack(alignment: .bottomLeading) {
+                Thumbnail(url: itemViewModel.url)
+                
+                VStack(alignment: .leading) {
+                    Text(itemViewModel.title.uppercased())
+                        .font(.title)
+                        .fontWeight(.bold)
+                }
+                .padding(16)
             }
         }
     }
@@ -85,12 +89,15 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
         NavigationStack {
             List {
                 ForEach($viewModel.itemViewModels, id: \.id) { itemViewModel in
-                    NavigationLink {
-                        ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))
-                    } label: {
+                    ZStack {
                         ItemView(itemViewModel: itemViewModel.wrappedValue)
+                        NavigationLink(destination: ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))) {
+                            EmptyView()
+                        }
+                        .opacity(0)
                     }
                 }
+                .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .refreshable {

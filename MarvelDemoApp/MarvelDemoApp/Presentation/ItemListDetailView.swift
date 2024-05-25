@@ -1,5 +1,18 @@
 import SwiftUI
 
+struct ItemDetailView: View {
+    let itemViewModel: ItemViewModel
+    
+    var body: some View {
+        VStack {
+            ItemView(itemViewModel: itemViewModel)
+            ForEach(itemViewModel.itemLists, id: \.id) { itemList in
+                ItemListsView(title: itemList.title, color: itemList.color, items: itemList.items)
+            }
+        }
+    }
+}
+
 struct ItemListDetailView<ViewModel>: View where ViewModel: ItemListDetailViewModelSchema {
     @StateObject private var viewModel: ViewModel
     
@@ -8,6 +21,10 @@ struct ItemListDetailView<ViewModel>: View where ViewModel: ItemListDetailViewMo
     }
     
     var body: some View {
-        Text("Hello World")
+        ItemDetailView(itemViewModel: viewModel.itemViewModel)
     }
+}
+
+#Preview {
+    ItemListDetailView(viewModel: ItemListDetailViewModel(itemViewModel: .mock()))
 }
