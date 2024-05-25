@@ -168,10 +168,10 @@ class CharactersCoreDataManager: CharactersStorageSchema {
                             resourceURI: entity.resourceURI,
                             urls: entity.urls.array(of: Url.self),
                             thumbnail: ´Image´(path: entity.thumbnail?.path, thumbnailExtension: entity.thumbnail?.thumbnailExtension),
-                            comics: ComicList(available: Int(entity.comics?.available ?? 0), returned: Int(entity.comics?.returned ?? 0), collectionURI: entity.comics?.collectionURI, items: entity.comics?.items.array(of: ComicSummary.self)),
-                            stories: StoryList(available: Int(entity.stories?.available ?? 0), returned: Int(entity.stories?.returned ?? 0), collectionURI: entity.stories?.collectionURI, items: entity.stories?.items.array(of: StorySummary.self)),
-                            events: EventList(available: Int(entity.events?.available ?? 0), returned: Int(entity.events?.returned ?? 0), collectionURI: entity.events?.collectionURI, items: entity.events?.items.array(of: EventSummary.self)),
-                            series: SeriesList(available: Int(entity.series?.available ?? 0), returned: Int(entity.series?.returned ?? 0), collectionURI: entity.series?.collectionURI, items: entity.series?.items.array(of: SeriesSummary.self))
+                            comics: ComicList(available: Int(entity.comics?.available ?? 0), returned: Int(entity.comics?.returned ?? 0), collectionURI: entity.comics?.collectionURI, items: entity.comics?.items.array(of: ComicSummaryEntity.self).compactMap { ComicSummary(resourceURI: $0.resourceURI, name: $0.name) }),
+                            stories: StoryList(available: Int(entity.stories?.available ?? 0), returned: Int(entity.stories?.returned ?? 0), collectionURI: entity.stories?.collectionURI, items: entity.stories?.items.array(of: StorySummaryEntity.self).compactMap { StorySummary(resourceURI: $0.resourceURI, name: $0.name, type: $0.type) }),
+                            events: EventList(available: Int(entity.events?.available ?? 0), returned: Int(entity.events?.returned ?? 0), collectionURI: entity.events?.collectionURI, items: entity.events?.items.array(of: EventSummaryEntity.self).compactMap { EventSummary(resourceURI: $0.resourceURI, name: $0.name) }),
+                            series: SeriesList(available: Int(entity.series?.available ?? 0), returned: Int(entity.series?.returned ?? 0), collectionURI: entity.series?.collectionURI, items: entity.series?.items.array(of: SeriesSummaryEntity.self).compactMap { SeriesSummary(resourceURI: $0.resourceURI, name: $0.name) })
                         )
                     }
                     continuation.resume(returning: characters)
