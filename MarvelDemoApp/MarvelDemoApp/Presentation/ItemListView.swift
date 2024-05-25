@@ -4,20 +4,26 @@ struct Thumbnail: View {
     let url: URL?
 
     var body: some View {
-        AsyncImage(url: url) { phase in
-            switch phase {
-              case .failure:
-                  Image(systemName: "photo")
-                      .font(.largeTitle)
-              case .success(let image):
-                  image
-                      .resizable()
-                      .aspectRatio(contentMode: .fill)
-                      .frame(height: 300)
-                      .clipped()
-              default:
-                  ProgressView()
-              }
+        ZStack {
+            GeometryReader { geometry in
+                AsyncImage(url: url, transaction: Transaction(animation: .default)) { phase in
+                    switch phase {
+                      case .failure:
+                          Image(systemName: "photo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        
+                      case .success(let image):
+                          image
+                              .resizable()
+                              .aspectRatio(contentMode: .fill)
+                      default:
+                          ProgressView()
+                      }
+                }
+                .ignoresSafeArea()
+                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+            }
         }
     }
 }
@@ -26,24 +32,20 @@ struct ItemView: View {
     let itemViewModel: ItemViewModel
 
     var body: some View {
-        VStack(spacing: 0.0) {
-            ZStack {
-                Thumbnail(url: itemViewModel.url)
-                
-                VStack {
-                    Spacer()
-                    HStack {
-                        Text(itemViewModel.title.uppercased())
-                            .bold()
-                            .font(.system(.largeTitle, design: .rounded))
-                            .foregroundStyle(.white)
-                            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0.0, y: 2.0)
-                            .padding()
-                        Spacer()
-                    }
-                }
+        ZStack {
+            Thumbnail(url: itemViewModel.url)
+            VStack {
+                Text(itemViewModel.title.uppercased())
+                    .bold()
+                    .font(.system(.largeTitle, design: .rounded))
+                    .foregroundStyle(.white)
+                    .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0.0, y: 2.0)
+                    .padding()
             }
+            .multilineTextAlignment(.center)
         }
+        .frame(height: 200)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -78,7 +80,6 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
                     ZStack {
                         CardView(itemViewModel: itemViewModel.wrappedValue)
                         NavigationLink(destination: ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))
-                            .transition(.moveAndFade)
                         ) {
                             EmptyView()
                         }
@@ -103,11 +104,4 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
 
 #Preview {
     ItemListView(viewModel: ItemListViewModel(itemService: MockItemsServiceFactory().createItemsService()), viewModelFactory: ItemListViewModelFactory())
-}
-
-
-extension AnyTransition {
-    static var moveAndFade: AnyTransition {
-        AnyTransition.move(edge: .trailing).combined(with: .opacity)
-    }
 }

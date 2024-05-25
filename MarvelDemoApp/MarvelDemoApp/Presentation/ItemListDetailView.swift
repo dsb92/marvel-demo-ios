@@ -42,9 +42,15 @@ struct ItemDetailView: View {
                     ItemView(itemViewModel: itemViewModel)
                     Text(itemViewModel.description)
                         .font(.subheadline)
-                        .fontWeight(.medium)
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(
+                            Color.black.opacity(0.75)
+                        )
+                        .clipShape(.rect(cornerRadius: 25))
                         .foregroundStyle(.white)
                         .padding()
+                        
                     ForEach(itemViewModel.itemLists, id: \.id) { itemList in
                         ItemListsView(title: itemList.title, color: itemList.color, items: itemList.items)
                     }
@@ -55,7 +61,7 @@ struct ItemDetailView: View {
                 .navigationBarBackButtonHidden()
             }
             .background(Color.black)
-            .ignoresSafeArea(edges: .all)
+            //.ignoresSafeArea()
 
             BackButton(action: {
                 presentationMode.wrappedValue.dismiss()
