@@ -6,7 +6,7 @@ struct MarvelDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ItemListView(viewModel: viewModel)
+            ItemListView(viewModel: viewModel, viewModelFactory: ItemListViewModelFactory())
         }
     }
 }

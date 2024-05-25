@@ -58,22 +58,39 @@ struct ItemViewModel: Identifiable {
 
 @MainActor
 protocol ItemListViewModelSchema: ObservableObject {
-    var itemViewModel: [ItemViewModel] { get set }
-    func loadItems() async
+    var itemViewModels: [ItemViewModel] { get set }
+    func send(_ action: ItemListViewModelAction)
+}
+
+enum ItemListViewModelAction {
+    case loadItems
+}
+
+enum ItemListViewScreens {
+    case detail(ItemViewModel)
 }
 
 @MainActor
 final class ItemListViewModel: ItemListViewModelSchema {
-    @Published var itemViewModel: [ItemViewModel] = []
+    @Published var itemViewModels: [ItemViewModel] = []
     
     private var itemService: ItemsServiceSchema
     init(itemService: ItemsServiceSchema) {
         self.itemService = itemService
     }
 
-    func loadItems() async {
+    func send(_ action: ItemListViewModelAction) {
+        switch action {
+        case .loadItems:
+            Task {
+                await loadItems()
+            }
+        }
+    }
+
+    private func loadItems() async {
         do {
-            itemViewModel = try await itemService.loadItems()
+            itemViewModels = try await itemService.loadItems()
         } catch {
             
         }

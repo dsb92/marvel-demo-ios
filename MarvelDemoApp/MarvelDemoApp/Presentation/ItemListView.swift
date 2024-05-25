@@ -74,27 +74,35 @@ struct ItemView: View {
 
 struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
     @StateObject private var viewModel: ViewModel
-
-    init(viewModel: @autoclosure @escaping () -> ViewModel) {
+    var viewModelFactory: ItemListViewModelFactorySchema
+    
+    init(viewModel: @autoclosure @escaping () -> ViewModel, viewModelFactory: ItemListViewModelFactory) {
         self._viewModel = StateObject(wrappedValue: viewModel())
+        self.viewModelFactory = viewModelFactory
     }
     
     var body: some View {
-        List {
-            ForEach($viewModel.itemViewModel, id: \.id) { itemViewModel in
-                ItemView(itemViewModel: itemViewModel.wrappedValue)
+        NavigationStack {
+            List {
+                ForEach($viewModel.itemViewModels, id: \.id) { itemViewModel in
+                    NavigationLink {
+                        ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))
+                    } label: {
+                        ItemView(itemViewModel: itemViewModel.wrappedValue)
+                    }
+                }
             }
-        }
-        .listStyle(.plain)
-        .refreshable {
-            await viewModel.loadItems()
-        }
-        .task {
-            await viewModel.loadItems()
+            .listStyle(.plain)
+            .refreshable {
+                viewModel.send(.loadItems)
+            }
+            .onAppear {
+                viewModel.send(.loadItems)
+            }
         }
     }
 }
 
 #Preview {
-    ItemListView(viewModel: ItemListViewModel(itemService: MockItemsServiceFactory().createItemsService()))
+    ItemListView(viewModel: ItemListViewModel(itemService: MockItemsServiceFactory().createItemsService()), viewModelFactory: ItemListViewModelFactory())
 }

@@ -68,6 +68,9 @@
 		46B8E05A2C01339D0034274B /* MockCharacterServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */; };
 		46B8E05C2C01348E0034274B /* MockItemsServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */; };
 		46B8E05E2C0135120034274B /* MockCharacterItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */; };
+		46B8E0602C01C0AC0034274B /* ItemListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E05F2C01C0AC0034274B /* ItemListDetailView.swift */; };
+		46B8E0622C01C1400034274B /* ItemListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0612C01C1400034274B /* ItemListDetailViewModel.swift */; };
+		46B8E0642C01D1DC0034274B /* ItemListViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B8E0632C01D1DC0034274B /* ItemListViewModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +147,9 @@
 		46B8E0592C01339D0034274B /* MockCharacterServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterServiceFactory.swift; sourceTree = "<group>"; };
 		46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemsServiceFactory.swift; sourceTree = "<group>"; };
 		46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		46B8E05F2C01C0AC0034274B /* ItemListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDetailView.swift; sourceTree = "<group>"; };
+		46B8E0612C01C1400034274B /* ItemListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDetailViewModel.swift; sourceTree = "<group>"; };
+		46B8E0632C01D1DC0034274B /* ItemListViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +334,7 @@
 		46B8DFE12C0063A10034274B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				46B8E0632C01D1DC0034274B /* ItemListViewModelFactory.swift */,
 				46B8E0482C00CB840034274B /* ItemListViewModel.swift */,
 				46B8DFE52C0064760034274B /* ItemListView.swift */,
 				46B8E03C2C00B4A30034274B /* ItemList.swift */,
@@ -336,6 +343,8 @@
 				46B8E04E2C0108EA0034274B /* ItemsServiceSchema.swift */,
 				46B8E05B2C01348E0034274B /* MockItemsServiceFactory.swift */,
 				46B8E05D2C0135120034274B /* MockCharacterItemsServiceAdapter.swift */,
+				46B8E0612C01C1400034274B /* ItemListDetailViewModel.swift */,
+				46B8E05F2C01C0AC0034274B /* ItemListDetailView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 				46B7DB8B2BFDCFBB00DEDAB9 /* SeriesList.swift in Sources */,
 				46B8DFCC2BFFD8E00034274B /* CharacterStorageService.swift in Sources */,
 				46B7DB832BFDCEB500DEDAB9 /* Character.swift in Sources */,
+				46B8E0622C01C1400034274B /* ItemListDetailViewModel.swift in Sources */,
 				46B8E0532C010A2E0034274B /* ItemsServiceFactory.swift in Sources */,
 				46B7DB852BFDCF8B00DEDAB9 /* ComicList.swift in Sources */,
 				46B8DFD82BFFE33D0034274B /* NetworkClientFactory.swift in Sources */,
@@ -503,6 +513,7 @@
 				46B7DBBE2BFEA8C000DEDAB9 /* MD5Hasher.swift in Sources */,
 				46B8E04B2C0100720034274B /* Nameable.swift in Sources */,
 				46B8DF952BFF7DF80034274B /* Dictionary+QueryParameter.swift in Sources */,
+				46B8E0642C01D1DC0034274B /* ItemListViewModelFactory.swift in Sources */,
 				46B7DB4E2BFDC41800DEDAB9 /* MarvelDemoApp.swift in Sources */,
 				46B7DB952BFDD00200DEDAB9 /* Url.swift in Sources */,
 				46B7DB8F2BFDCFD900DEDAB9 /* StorySummary.swift in Sources */,
@@ -520,6 +531,7 @@
 				46B8DFD62BFFE0E10034274B /* MockThrowErrorCharacterAPIService.swift in Sources */,
 				46B7DBA42BFE969800DEDAB9 /* URLRequestNetworkClient.swift in Sources */,
 				46B8DFC62BFFC4F70034274B /* Optional+NSSet+Array.swift in Sources */,
+				46B8E0602C01C0AC0034274B /* ItemListDetailView.swift in Sources */,
 				46B8DFD22BFFDE2E0034274B /* MockFallbackCharacterService.swift in Sources */,
 				46B7DBBC2BFEA87100DEDAB9 /* Load.swift in Sources */,
 				46B7DB892BFDCFAF00DEDAB9 /* StoryList.swift in Sources */,
