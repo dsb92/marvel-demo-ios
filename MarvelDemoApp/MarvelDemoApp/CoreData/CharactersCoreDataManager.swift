@@ -145,6 +145,18 @@ class CharactersCoreDataManager: CharactersStorageSchema {
             let context = viewContext
             context.perform {
                 let fetchRequest: NSFetchRequest<CharacterEntity> = CharacterEntity.fetchRequest()
+                fetchRequest.relationshipKeyPathsForPrefetching = [
+                    "thumbnail",
+                    "urls",
+                    "comics",
+                    "comics.items",
+                    "stories", 
+                    "stories.items",
+                    "series",
+                    "series.items",
+                    "events",
+                    "events.items"
+                ]
                 do {
                     let characterEntities = try context.fetch(fetchRequest)
                     let characters = characterEntities.compactMap { entity in
