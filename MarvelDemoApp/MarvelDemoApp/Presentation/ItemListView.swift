@@ -75,6 +75,23 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
     
     var body: some View {
         NavigationStack {
+            content
+                .navigationTitle("Characters")
+                .errorAlert(error: $viewModel.error)
+        }
+        .onAppear {
+            viewModel.send(.loadItems)
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        switch viewModel.viewState {
+        case .loading:
+            ProgressView()
+        case .failed:
+            refresh
+        case .loaded:
             List {
                 ForEach($viewModel.itemViewModels, id: \.id) { itemViewModel in
                     ZStack {
@@ -91,14 +108,53 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .navigationTitle("Characters")
+            .transition(.opacity)
+            .animation(.default, value: viewModel.viewState)
             .refreshable {
                 viewModel.send(.loadItems)
             }
-            .onAppear {
-                viewModel.send(.loadItems)
-            }
+        case .idle:
+            refresh
+        case .empty:
+            refresh
         }
+    }
+    
+    var refresh: some View {
+        List {
+            Text("Nothing to show here...")
+        }
+        .refreshable {
+            viewModel.send(.loadItems)
+        }
+    }
+}
+
+fileprivate extension View {
+    func errorAlert(error: Binding<Error?>, buttonTitle: String = "Ok") -> some View {
+        let localizedAlertError = LocalizedAlertError(error: error.wrappedValue)
+        return alert(isPresented: .constant(localizedAlertError != nil), error: localizedAlertError) { _ in
+            Button(buttonTitle) {
+                error.wrappedValue = nil
+            }
+        } message: { error in
+            Text(error.recoverySuggestion ?? "")
+        }
+    }
+}
+
+private struct LocalizedAlertError: LocalizedError {
+    let underlyingError: LocalizedError
+    var errorDescription: String? {
+        underlyingError.errorDescription
+    }
+    var recoverySuggestion: String? {
+        underlyingError.recoverySuggestion
+    }
+
+    init?(error: Error?) {
+        guard let localizedError = error as? LocalizedError else { return nil }
+        underlyingError = localizedError
     }
 }
 

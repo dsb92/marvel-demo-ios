@@ -59,6 +59,8 @@ struct ItemViewModel: Identifiable {
 @MainActor
 protocol ItemListViewModelSchema: ObservableObject {
     var itemViewModels: [ItemViewModel] { get set }
+    var viewState: ViewState { get set }
+    var error: Swift.Error? { get set }
     func send(_ action: ItemListViewModelAction)
 }
 
@@ -73,6 +75,8 @@ enum ItemListViewScreens {
 @MainActor
 final class ItemListViewModel: ItemListViewModelSchema {
     @Published var itemViewModels: [ItemViewModel] = []
+    @Published var viewState: ViewState = .idle
+    @Published var error: Swift.Error?
     
     private var itemService: ItemsServiceSchema
     init(itemService: ItemsServiceSchema) {
@@ -90,9 +94,26 @@ final class ItemListViewModel: ItemListViewModelSchema {
 
     private func loadItems() async {
         do {
+            if itemViewModels.isEmpty {
+                viewState = .loading
+            }
             itemViewModels = try await itemService.loadItems()
+            if itemViewModels.isEmpty {
+                viewState = .empty
+            } else {
+                viewState = .loaded
+            }
         } catch {
-            
+            viewState = .failed
+            self.error = error
         }
     }
+}
+
+enum ViewState {
+    case loading
+    case failed
+    case loaded
+    case empty
+    case idle
 }
