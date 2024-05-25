@@ -32,6 +32,7 @@ struct ItemListsView: View {
 }
 
 struct ItemDetailView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let itemViewModel: ItemViewModel
     
     var body: some View {
@@ -49,21 +50,26 @@ struct ItemDetailView: View {
                     }
                     .padding()
                 }
+                
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
             }
-            BackButton()
+            .background(Color.black)
+            .ignoresSafeArea(edges: .all)
+
+            BackButton(action: {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
-        .background(Color.black)
-        .ignoresSafeArea(edges: .top)
     }
 }
 
 struct BackButton: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var action: () -> ()
+
     var body: some View {
         Button {
-            presentationMode.wrappedValue.dismiss()
+            action()
         } label: {
             Image(systemName: "xmark.circle.fill")
                 .renderingMode(.template)
@@ -71,8 +77,8 @@ struct BackButton: View {
                 .frame(width: 30, height: 30)
                 .aspectRatio(contentMode: .fit)
                 .foregroundStyle(.white)
+                .padding(.horizontal)
         }
-        .padding(30)
     }
 }
 

@@ -77,10 +77,13 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
                 ForEach($viewModel.itemViewModels, id: \.id) { itemViewModel in
                     ZStack {
                         CardView(itemViewModel: itemViewModel.wrappedValue)
-                        NavigationLink(destination: ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))) {
+                        NavigationLink(destination: ItemListDetailView(viewModel: viewModelFactory.createDetailViewModel(for: itemViewModel.wrappedValue))
+                            .transition(.moveAndFade)
+                        ) {
                             EmptyView()
                         }
                         .opacity(0)
+                        .buttonStyle(.plain)
                     }
                 }
                 .listRowInsets(EdgeInsets())
@@ -100,4 +103,11 @@ struct ItemListView<ViewModel>: View where ViewModel: ItemListViewModelSchema {
 
 #Preview {
     ItemListView(viewModel: ItemListViewModel(itemService: MockItemsServiceFactory().createItemsService()), viewModelFactory: ItemListViewModelFactory())
+}
+
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        AnyTransition.move(edge: .trailing).combined(with: .opacity)
+    }
 }
