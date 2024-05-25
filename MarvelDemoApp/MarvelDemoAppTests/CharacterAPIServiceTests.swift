@@ -4,7 +4,7 @@ import XCTest
 
 class CharacterAPIServiceTests: XCTestCase {
     func testGetCharactersWithMockService() async throws {
-        let mockService = MockCharacterAPIService()
+        let mockService = MockCharacterServiceAPI()
         
         let parameters = CharacterGetParameters()
         

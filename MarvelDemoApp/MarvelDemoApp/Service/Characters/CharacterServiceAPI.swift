@@ -1,6 +1,6 @@
 import Foundation
 
-struct CharacterAPIService: CharacterServiceSchema {
+struct CharacterServiceAPI: CharacterServiceSchema {
     let apiClient: APIClientSchema
     let parser: JSONParserSchema
     

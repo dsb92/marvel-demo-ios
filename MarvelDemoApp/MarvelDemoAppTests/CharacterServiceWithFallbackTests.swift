@@ -4,8 +4,8 @@ import XCTest
 
 class CharacterServiceWithFallbackTests: XCTestCase {
     func testPrimaryServiceSucceeds() async {
-        let primaryService = MockCharacterAPIService()
-        let fallbackService = MockFallbackCharacterService()
+        let primaryService = MockCharacterServiceAPI()
+        let fallbackService = MockCharacterServiceWithFallback()
         let serviceWithFallback = primaryService.fallback(fallbackService)
         let parameters = CharacterGetParameters()
 
@@ -19,8 +19,8 @@ class CharacterServiceWithFallbackTests: XCTestCase {
     }
     
     func testFallbackServiceSucceeds() async {
-        let primaryService = MockThrowErrorCharacterAPIService()
-        let fallbackService = MockFallbackCharacterService()
+        let primaryService = MockCharacterServiceAPIThrowError()
+        let fallbackService = MockCharacterServiceWithFallback()
         let serviceWithFallback = primaryService.fallback(fallbackService)
         let parameters = CharacterGetParameters()
 

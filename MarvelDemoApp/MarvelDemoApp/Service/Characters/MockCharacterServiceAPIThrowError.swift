@@ -1,6 +1,6 @@
 import Foundation
 
-struct MockThrowErrorCharacterAPIService: CharacterServiceSchema {
+struct MockCharacterServiceAPIThrowError: CharacterServiceSchema {
     func getCharacters(
         parameters: CharacterGetParameters
     ) async throws -> CharacterDataWrapper {

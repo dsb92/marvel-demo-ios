@@ -1,4 +1,4 @@
-struct MockFallbackCharacterService: CharacterServiceSchema {
+struct MockCharacterServiceWithFallback: CharacterServiceSchema {
     func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper {
         return CharacterDataWrapper(
             code: nil,

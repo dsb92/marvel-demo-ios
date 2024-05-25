@@ -1,4 +1,4 @@
-struct CharacterStorageService: CharacterServiceSchema {
+struct CharacterServiceStorage: CharacterServiceSchema {
     let storage: CharactersStorageSchema
     
     func getCharacters(parameters: CharacterGetParameters) async throws -> CharacterDataWrapper {
